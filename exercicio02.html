@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula CSS - 2</title>
+</head>
+<body>
+    <h1>Aula flex-box</h1>
+
+    <div class="caixa pai">
+        <div class="caixa filho cor1">1</div>
+        <div class="caixa filho cor2">2</div>
+        <div class="caixa filho cor3">3</div>
+    </div>
+
+    <div class="instrucoes">
+        <h2>Testando comandos de estilo:</h2>
+        <p><em>Adicione os estilos abaixo no código-fonte e veja o que acontece com os elementos.</em></p>
+        <ol>
+            <li>Altere a propriedade <strong>justify-content</strong> para <strong>flex-end</strong>.</li>
+            <li>Altere a propriedade <strong>justify-content</strong> para <strong>space-between</strong>.</li>
+            <li>Altere a propriedade <strong>justify-content</strong> para <strong>center</strong>.</li>
+            <li>Altere a propriedade <strong>align-items</strong> para <strong>flex-end</strong>.</li>
+            <li>Altere a propriedade <strong>align-items</strong> para <strong>center</strong>.</li>
+            <li>Altere a propriedade <strong>flex-direction</strong> para <strong>column</strong>.</li>
+        </ol>
+
+        <h2>Agora é com você!</h2>
+        <p><em>Desafio: como será que eu faço para deixar os elementos da maneira abaixo?</em></p>
+    </div>
+
+    <div class="footer">
+        <p>Quer saber mais sobre o Layout com Flexbox? Acesse:</p>
+    </div>
+</body>
+
+<style>
+    body {
+        margin: 0;
+        background-color: #f8f8f8;
+        color: #212427;
+    }
+
+    h1 {
+        width: fit-content;
+        margin: 20px auto;
+    }
+
+    .caixa {
+        border-radius: 5px;
+    }
+
+    .pai {
+        width: 80%;
+        height: 350px;
+        margin: auto;
+        background-color: antiquewhite;
+        border: solid 2px #212427;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .filho {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 80px;
+        font-weight: bold;
+    }
+
+    .cor1 {
+        background-color: #ED145B;
+        order: 1;
+        align-self: flex-start;
+    }
+
+    .cor3 {
+        background-color: #EFB661;
+        order: 2;
+        align-self: center;
+    }
+
+    .cor2 {
+        background-color: #63B1BC;
+        order: 3;
+        align-self: flex-end;
+    }
+
+    .instrucoes {
+        width: 80%;
+        margin: 30px auto;
+        text-align: left;
+    }
+
+    .footer {
+        background-color: antiquewhite;
+        height: 130px;
+        margin-top: 50px;
+        padding-top: 20px;
+        text-align: center;
+    }
+</style>
+</html>
