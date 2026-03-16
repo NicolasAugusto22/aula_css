@@ -1,35 +1,452 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>AquaTech</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaTech</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
+    body {
+      background-color: #071726;
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+    }
+
+    .header {
+      background-color: #05111d;
+      border-bottom: 2px solid #00c2ff;
+      padding: 20px 0;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .titulo {
+      color: #00c2ff;
+      font-size: 32px;
+    }
+
+    .navbar {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .navbar li {
+      font-size: 18px;
+    }
+
+    .agora {
+      font-weight: bold;
+      color: #00c2ff;
+    }
+
+    .banner {
+      min-height: 85vh;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/banner-fundo.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+    }
+
+    .banner .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .banner-texto {
+      max-width: 520px;
+    }
+
+    .banner-texto h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #00e1ff;
+    }
+
+    .banner-texto p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .banner-texto button {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      background-color: #00c2ff;
+      color: #00131f;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .banner-img img {
+      width: 380px;
+      max-width: 100%;
+    }
+
+    .sobre {
+      padding: 70px 0;
+      background-image: url('https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/bg-jelly-fish-para-home.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .sobre h2,
+    .cards h2,
+    .equipe h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      color: #00c2ff;
+    }
+
+    .cards-grid {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: rgba(255,255,255,0.08);
+      border: 1px solid rgba(0,194,255,0.35);
+      border-radius: 16px;
+      padding: 25px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .card img {
+      width: 90px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #00e1ff;
+      font-size: 24px;
+    }
+
+    .card p {
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .beneficios {
+      padding: 70px 0;
+      background-color: #081a2b;
+    }
+
+    .beneficios .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .beneficios-texto {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .beneficios-texto h2 {
+      color: #00c2ff;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .beneficios-texto p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .beneficios-img {
+      flex: 1;
+      text-align: center;
+      min-width: 280px;
+    }
+
+    .beneficios-img img {
+      width: 360px;
+      max-width: 100%;
+    }
+
+    .equipe {
+      padding: 70px 0;
+      background-image: url('https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/bg-jelly-fish-para_outras_pags.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .equipe-grid {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .membro {
+      background-color: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+    }
+
+    .membro img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #00c2ff;
+    }
+
+    .membro h3 {
+      margin-bottom: 8px;
+      color: #00e1ff;
+    }
+
+    .avaliacoes {
+      padding: 70px 0;
+      background-color: #061320;
+    }
+
+    .avaliacoes h2 {
+      text-align: center;
+      font-size: 36px;
+      color: #00c2ff;
+      margin-bottom: 40px;
+    }
+
+    .avaliacoes-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .avaliacao {
+      background-color: rgba(255,255,255,0.08);
+      width: 220px;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .avaliacao img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      background-color: #020b14;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 15px;
+      border-top: 2px solid #00c2ff;
+    }
+
+    @media (max-width: 768px) {
+      .header .container,
+      .banner .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .banner-texto h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<header>
-<h1>AquaTech</h1>
+  <div class="header">
+    <div class="container">
+      <h1 class="titulo">AquaTech</h1>
+      <ul class="navbar">
+        <li><a class="agora" href="#">Inicial</a></li>
+        <li><a href="simulador.html">Simulador</a></li>
+        <li>|</li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </div>
+  </div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="login.html">Login</a>
-<a href="cadastro.html">Cadastro</a>
-<a href="simulador.html">Simulador</a>
-</nav>
+  <div class="banner">
+    <div class="container">
+      <div class="banner-texto">
+        <h1>Preservando hoje para existirem amanhã.</h1>
+        <p>
+          A AquaTech ajuda no monitoramento e cuidado do ambiente aquático,
+          trazendo mais segurança, controle e tecnologia para o seu negócio.
+        </p>
+        <button>Saiba mais</button>
+      </div>
 
-</header>
+      <div class="banner-img">
+        <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/planet-earth_color.png" alt="Planeta Terra">
+      </div>
+    </div>
+  </div>
 
-<section>
+  <div class="sobre">
+    <div class="container">
+      <h2>Nossos pilares</h2>
 
-<h2>Monitoramento Inteligente de Temperatura</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/missao.png" alt="Missão">
+          <h3>Missão</h3>
+          <p>
+            Oferecer soluções tecnológicas para monitoramento e preservação de ambientes aquáticos,
+            apoiando decisões mais rápidas e seguras.
+          </p>
+        </div>
 
-<p>
-Sistema de monitoramento de temperatura para piscicultura,
-garantindo maior produtividade na criação de tilápias.
-</p>
+        <div class="card">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/visao.png" alt="Visão">
+          <h3>Visão</h3>
+          <p>
+            Ser referência em inovação no setor aquícola, promovendo eficiência,
+            sustentabilidade e crescimento para nossos clientes.
+          </p>
+        </div>
 
-</section>
+        <div class="card">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/valores.png" alt="Valores">
+          <h3>Valores</h3>
+          <p>
+            Compromisso, inovação, responsabilidade ambiental, transparência e
+            foco total na qualidade dos resultados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="beneficios">
+    <div class="container">
+      <div class="beneficios-texto">
+        <h2>Por que escolher a AquaTech?</h2>
+        <p>
+          Com tecnologia acessível e monitoramento inteligente, você acompanha
+          dados importantes em tempo real e evita prejuízos na produção.
+        </p>
+        <p>
+          Nossa proposta é unir praticidade, visual moderno e informações úteis
+          para facilitar o controle do seu ambiente aquático.
+        </p>
+      </div>
+
+      <div class="beneficios-img">
+        <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/imagem-apoio.png" alt="Imagem de apoio">
+      </div>
+    </div>
+  </div>
+
+  <div class="equipe">
+    <div class="container">
+      <h2>Nossa equipe</h2>
+
+      <div class="equipe-grid">
+        <div class="membro">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/pessoa1.png" alt="Pessoa 1">
+          <h3>Especialista 1</h3>
+          <p>Responsável pelo monitoramento e análise de dados.</p>
+        </div>
+
+        <div class="membro">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/pessoa2.png" alt="Pessoa 2">
+          <h3>Especialista 2</h3>
+          <p>Atua no desenvolvimento das soluções tecnológicas.</p>
+        </div>
+
+        <div class="membro">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/pessoa3.png" alt="Pessoa 3">
+          <h3>Especialista 3</h3>
+          <p>Foco em atendimento, suporte e melhoria contínua.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="avaliacoes">
+    <div class="container">
+      <h2>Avaliações</h2>
+
+      <div class="avaliacoes-grid">
+        <div class="avaliacao">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/av1.png" alt="Avatar 1">
+          <p>"Sistema muito intuitivo e bonito."</p>
+        </div>
+
+        <div class="avaliacao">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/av2.png" alt="Avatar 2">
+          <p>"Ajudou bastante no controle diário."</p>
+        </div>
+
+        <div class="avaliacao">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/av3.png" alt="Avatar 3">
+          <p>"Visual profissional e bem organizado."</p>
+        </div>
+
+        <div class="avaliacao">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/av4.png" alt="Avatar 4">
+          <p>"Ótima apresentação do projeto."</p>
+        </div>
+
+        <div class="avaliacao">
+          <img src="https://raw.githubusercontent.com/SPTech-Atividades-de-PI/aquatech-somente-html/main/public/assets/imgs/av5.png" alt="Avatar 5">
+          <p>"Passa credibilidade e tecnologia."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Feito com amor por aluno ♥ SPTech © 2024
+  </div>
 
 </body>
 </html>
