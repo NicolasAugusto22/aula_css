@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Simulador</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Simulador de Temperatura</h2>
+
+Temperatura da água:<br>
+<input type="number" id="temp"><br><br>
+
+<button onclick="ver()">Analisar</button>
+
+<div id="resultado"></div>
+
+</body>
+
+<script>
+
+function ver(){
+
+let temperatura = Number(temp.value)
+
+if(temperatura < 20){
+resultado.innerHTML="Temperatura muito baixa para tilápia"
+}
+else if(temperatura <= 30){
+resultado.innerHTML="Temperatura ideal"
+}
+else{
+resultado.innerHTML="Temperatura muito alta"
+}
+
+}
+
+</script>
+
+</html>
