@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício de CSS</title>
+  </head>
+
+  <!-- NÃO ALTERE ESTE ARQUIVO, SOMENTE O CSS -->
+
+  <body>
+    <div class="container">
+      <div class="cabecalho">
+        <p>Título Principal</p>
+        <p>Este é o subtítulo que precisa de estilo específico.</p>
+      </div>
+
+      <div class="conteudo">
+        <h1>Titulo do paragrafo</h1>
+        <p>Este é o parágrafo que herdará estilos aplicados em div pai.</p>
+      </div>
+    </div>
+  </body>
+
+  <style>
+
+.container {
+    font-family: "Courier New", monospace;
+    padding: 20px;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    background-color: lightblue;
+    color: green;
+}
+
+/* subtítulo */
+.cabecalho p:last-child {
+    color: red;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+    font-size: 24px;
+}
+
+.conteudo h1 {
+    text-align: center;
+}
+
+.conteudo p {
+    background-color: yellow;
+}
+
+  </style>
+</html>
